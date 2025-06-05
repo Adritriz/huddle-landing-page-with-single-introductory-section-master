@@ -174,8 +174,8 @@ p{
     }
     .section2 p {
         padding-left: 0;
-      /*   margin-right: 2rem;
-        font-size: 1.3rem; */
+        margin-right: 2rem;
+        font-size: 1.3rem; 
     }
     .socials {
         grid-row: 3 / 4;
