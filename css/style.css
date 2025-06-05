@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/*||RESET*/
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+svg {
+   /*  width: 100%; */
+    display: block;
+}
+
+button {
+  /*   font-family: inherit; */
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*||VARIABLES*/
+:root {
+    /*FONT*/
+    --FS: 16px;
+    --FF: "Open Sans", sans-serif;
+    --FW-400: 400;
+    /*COLORS*/
+    --CLR-VIOLET: hsl(257, 40%, 49%);
+    --CLR-VIOLET-A: hsla(257, 37%, 30%, 0.854);
+    --CLR-SOFT-MAGENTA: hsl(300, 69%, 71%);
+
+}
+/*||UTILITIES*/
+.offscreen {
+    position: absolute;
+    left: -90000px;
+}
+
+/*||GENERAL STYLES*/
+html {
+    font-family: var(--FF);
+    font-size: var(--FS);
+    font-weight: var(--FW-400);
+}
+
+body {
+/*     display: grid; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    min-width: 320px;
+    background-color: var(--CLR-VIOLET);
+    background-image: url(../images/bg-mobile.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100vw 373px;
+    color:  hsla(0, 0%, 100%, 0.877);
+}
+header {
+    text-align: left;
+    margin: 1.4rem 0 0 2rem;
+}
+header img {
+    width: 135px;
+    height: 50px;
+}
+main {
+    margin-top: 2.5rem;
+}
+/*|| MAIN CONTENT*/
+
+.mockups {
+    width: 300px;
+    height: 220px;
+    margin-top: 0.25rem;
+}
+h1 {
+    font-size: 1.6rem;
+    margin-top: 3.5rem;
+}
+p{
+    padding: 0 2.2rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px var(--CLR-VIOLET-A);
+    background-color: #fff;
+    color: var(--CLR-VIOLET);
+    font-size: 0.7rem;
+    margin-top: 1.5rem;
+    padding: 1.2rem 0.9rem 0.9rem 0.9rem;
+    width: 225px;
+}
+.btn:hover, 
+.btn:focus {
+    background-color: var(--CLR-SOFT-MAGENTA);
+    color: #fff;
+    cursor: pointer;
+}
+/*||FOOTER*/
+.socials {
+    margin: 4rem 0 2rem 0;
+    
+    display: flex;
+    place-content: center;
+    gap: 0.75rem;
+}
+.socials > * {
+    border: 1.5px solid hsla(0, 0%, 100%, 0.877);
+    border-radius: 50%;
+}
+.socials > *:hover,
+.socials > *:focus {
+     border: 1.5px solid var(--CLR-SOFT-MAGENTA);
+     cursor: pointer;
+}
+/*Didn't work to make img active color, perhaps actual img of that color would be better?
+/* .socials img:hover,
+.socials img:focus {
+    mix-blend-mode: screen;
+    background-color: var(--CLR-SOFT-MAGENTA);
+    
+} */
+.fbIcon {
+    padding: 0.5rem 0.28rem 0.2rem 0.55rem;
+} 
+.twitterIcon {
+    padding: 0.6rem 0.4rem 0.2rem 0.6rem;
+}
+.instaIcon {
+    padding: 0.5rem 0.38rem 0 0.48rem;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/*||QUERIES*/
+@media screen and (min-width: 600px) {
+    body {
+        background-image: url(../images/bg-desktop.svg);
+        background-position: -50px;
+        background-size: 100vw 100vh;
+        display: grid;
+        grid-template-rows: 20% 1fr 20%;
+    }
+    header img {
+        margin: 1rem 0 0 1rem;
+        width: 264px;
+        height: 65px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        margin: 0;
+    }
+    .section1 {
+        grid-column: 1 / 2;
+    }
+    .mockups {
+        width: min(50vw, 650px);
+        height: max(50vh, 500px);
+        margin-left: 2.2rem;
+    }
+    .section2 {
+        grid-column: 2 / 3;
+        text-align: left;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .section2 p {
+        padding-left: 0;
+      /*   margin-right: 2rem;
+        font-size: 1.3rem; */
+    }
+    .socials {
+        grid-row: 3 / 4;
+        place-content: end;
+        margin: 1rem 100px 0 0;
+    } 
+    .btn {
+        font-size: 1.2rem;
+    }
+}
